@@ -2,17 +2,22 @@
 using namespace std;
 int fib(int n)
 {
-    if (n <= 1)
-        return 0;
-    if (n == 2)
-        return 1;
-    return fib(n - 1) + fib(n - 2);
+    int f[n];
+    f[0] = 0;
+    f[1] = 1;
+    for (int i = 2; i < n; i++)
+    {
+        f[i] = f[i - 1] + f[i - 2];
+    }
+    for (int e : f)
+        cout << e << endl;
+    return 0;
 }
 int main()
 {
     int n;
     cout << "n = ";
     cin >> n;
-    cout << fib(n) << endl;
+    fib(n);
     return 0;
 }
